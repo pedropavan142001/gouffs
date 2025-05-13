@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Calculadora de IG</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
+<meta charset="utf-8"/>
+<title>Calculadora de IG</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<style>
     body { font-family: sans-serif; max-width: 600px; margin: 2rem auto; padding: 1rem; }
     h2 { margin-top: 2rem; }
     label { display: block; margin-top: 1rem; }
@@ -36,33 +37,26 @@
   </style>
 </head>
 <body>
-
-
 <h1 style="text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem;">Obstetrícia</h1>
-<p style=\"text-align: center; font-size: 0.9rem; margin-bottom: 2rem;\">autor: Pedro Pavan, UFFS.</p>
-
-
-  <h1>Calculadora de IG</h1>
-
-  <h2>Cálculo pela DUM</h2>
-  <label for="dum">DUM:</label>
-  <input type="date" id="dum">
-  <button onclick="calcularPorDUM()">Calcular IG</button>
-  <div class="resultado" id="resultadoDUM"></div>
-  <div class="resultado" id="resultadoDPP"></div>
-
-  <h2>Cálculo pela USG</h2>
-  <label for="dataUSG">USG:</label>
-  <input type="date" id="dataUSG">
-  <label for="semanasUSG">Semanas:</label>
-  <input type="number" id="semanasUSG" min="0">
-  <label for="diasUSG">Dias:</label>
-  <input type="number" id="diasUSG" min="0" max="6">
-  <button onclick="calcularPorUSG()">Calcular IG</button>
-  <div class="resultado" id="resultadoUSG"></div>
-  <div class="resultado" id="resultadoDPPusg"></div>
-
-  <script>
+<p 0.9rem;="" 2rem;\"="" center;="" font-size:="" margin-bottom:="" style='\"text-align:'>autor: Pedro Pavan, UFFS.</p>
+<h1>Calculadora de IG</h1>
+<h2>Cálculo pela DUM</h2>
+<label for="dum">DUM:</label>
+<input id="dum" type="date"/>
+<button onclick="calcularPorDUM()">Calcular IG</button>
+<div class="resultado" id="resultadoDUM"></div>
+<div class="resultado" id="resultadoDPP"></div>
+<h2>Cálculo pela USG</h2>
+<label for="dataUSG">USG:</label>
+<input id="dataUSG" type="date"/>
+<label for="semanasUSG">Semanas:</label>
+<input id="semanasUSG" min="0" type="number"/>
+<label for="diasUSG">Dias:</label>
+<input id="diasUSG" max="6" min="0" type="number"/>
+<button onclick="calcularPorUSG()">Calcular IG</button>
+<div class="resultado" id="resultadoUSG"></div>
+<div class="resultado" id="resultadoDPPusg"></div>
+<script>
     function calcularPorDUM() {
       const dumInput = document.getElementById('dum').value;
       if (!dumInput) return;
@@ -110,14 +104,12 @@
       document.getElementById('resultadoDPPusg').innerText = `DPP: ${dppFormatada}`;
     }
   </script>
-
-  <h2>GJ</h2>
-  <label for="glicemia">GJ (mg/dL):</label>
-  <input type="number" id="glicemia" min="0">
-  <button onclick="avaliarGlicemia()">Avaliar</button>
-  <div class="resultado" id="resultadoGlicemia"></div>
-
-  <script>
+<h2>GJ</h2>
+<label for="glicemia">GJ (mg/dL):</label>
+<input id="glicemia" min="0" type="number"/>
+<button onclick="avaliarGlicemia()">Avaliar</button>
+<div class="resultado" id="resultadoGlicemia"></div>
+<script>
     function avaliarGlicemia() {
       const valor = parseFloat(document.getElementById('glicemia').value);
       const resultado = document.getElementById('resultadoGlicemia');
@@ -136,18 +128,16 @@
       }
     }
   </script>
-
-  <h2>TOTG</h2>
-  <label for="gjTotg">GJ (mg/dL):</label>
-  <input type="number" id="gjTotg" min="0">
-  <label for="totg60">60' (mg/dL):</label>
-  <input type="number" id="totg60" min="0">
-  <label for="totg120">120' (mg/dL):</label>
-  <input type="number" id="totg120" min="0">
-  <button onclick="avaliarTOTG()">Avaliar TOTG</button>
-  <div class="resultado" id="resultadoTOTG"></div>
-
-  <script>
+<h2>TOTG</h2>
+<label for="gjTotg">GJ (mg/dL):</label>
+<input id="gjTotg" min="0" type="number"/>
+<label for="totg60">60' (mg/dL):</label>
+<input id="totg60" min="0" type="number"/>
+<label for="totg120">120' (mg/dL):</label>
+<input id="totg120" min="0" type="number"/>
+<button onclick="avaliarTOTG()">Avaliar TOTG</button>
+<div class="resultado" id="resultadoTOTG"></div>
+<script>
     function avaliarTOTG() {
       const gj = parseFloat(document.getElementById('gjTotg').value);
       const v60 = parseFloat(document.getElementById('totg60').value);
@@ -176,87 +166,63 @@
       resultado.innerHTML = `GJ: ${gj} mg/dL → ${resGJ}<br>60': ${v60} mg/dL → ${res60}<br>120': ${v120} mg/dL → ${res120}`;
     }
   </script>
-
-  
-
-
 <h2>HGTs</h2>
-
 <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-  <div style="flex: 1;">
-    <label for="dataInicio">Início:</label>
-    <input type="date" id="dataInicio">
-  </div>
-  <div style="flex: 1;">
-    <label for="dataFim">Fim:</label>
-    <input type="date" id="dataFim">
-  </div>
+<div style="flex: 1;">
+<label for="dataInicio">Início:</label>
+<input id="dataInicio" type="date"/>
 </div>
-
+<div style="flex: 1;">
+<label for="dataFim">Fim:</label>
+<input id="dataFim" type="date"/>
+</div>
+</div>
 <label for="totalAfericoes">Total de aferições:</label>
-<input type="number" id="totalAfericoes" min="0">
-
+<input id="totalAfericoes" min="0" type="number"/>
 <label for="totalAlteradas">Total de alteradas:</label>
-<input type="number" id="totalAlteradas" min="0">
-
-
-
-
+<input id="totalAlteradas" min="0" type="number"/>
 <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-  <div style="flex: 1;">
-    <label for="gjAlt">GJ alteradas:</label>
-    <input type="number" id="gjAlt" min="0">
-  </div>
-  <div style="flex: 1;">
-    <label for="gjMax">GJ máxima (mg/dL):</label>
-    <input type="number" id="gjMax" min="0">
-  </div>
+<div style="flex: 1;">
+<label for="gjAlt">GJ alteradas:</label>
+<input id="gjAlt" min="0" type="number"/>
 </div>
-
-
-
+<div style="flex: 1;">
+<label for="gjMax">GJ máxima (mg/dL):</label>
+<input id="gjMax" min="0" type="number"/>
+</div>
+</div>
 <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-  <div style="flex: 1;">
-    <label for="cafeAlt">1h pós-café alteradas:</label>
-    <input type="number" id="cafeAlt" min="0">
-  </div>
-  <div style="flex: 1;">
-    <label for="cafeMax">Máxima (mg/dL):</label>
-    <input type="number" id="cafeMax" min="0">
-  </div>
+<div style="flex: 1;">
+<label for="cafeAlt">1h pós-café alteradas:</label>
+<input id="cafeAlt" min="0" type="number"/>
 </div>
-
-
-
+<div style="flex: 1;">
+<label for="cafeMax">Máxima (mg/dL):</label>
+<input id="cafeMax" min="0" type="number"/>
+</div>
+</div>
 <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-  <div style="flex: 1;">
-    <label for="almocoAlt">1h pós-almoço alteradas:</label>
-    <input type="number" id="almocoAlt" min="0">
-  </div>
-  <div style="flex: 1;">
-    <label for="almocoMax">Máxima (mg/dL):</label>
-    <input type="number" id="almocoMax" min="0">
-  </div>
+<div style="flex: 1;">
+<label for="almocoAlt">1h pós-almoço alteradas:</label>
+<input id="almocoAlt" min="0" type="number"/>
 </div>
-
-
-
+<div style="flex: 1;">
+<label for="almocoMax">Máxima (mg/dL):</label>
+<input id="almocoMax" min="0" type="number"/>
+</div>
+</div>
 <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-  <div style="flex: 1;">
-    <label for="jantarAlt">1h pós-jantar alteradas:</label>
-    <input type="number" id="jantarAlt" min="0">
-  </div>
-  <div style="flex: 1;">
-    <label for="jantarMax">Máxima (mg/dL):</label>
-    <input type="number" id="jantarMax" min="0">
-  </div>
+<div style="flex: 1;">
+<label for="jantarAlt">1h pós-jantar alteradas:</label>
+<input id="jantarAlt" min="0" type="number"/>
 </div>
-
-
+<div style="flex: 1;">
+<label for="jantarMax">Máxima (mg/dL):</label>
+<input id="jantarMax" min="0" type="number"/>
+</div>
+</div>
 <button onclick="gerarResumoManual()">Gerar Resumo HGTs</button>
-
 <div class="resultado" id="resumoManual" style="margin-top: 1.5rem;"></div>
-
 <script>
   function gerarResumoManual() {
     const total = parseInt(document.getElementById('totalAfericoes').value);
@@ -294,48 +260,39 @@
     `;
   }
 </script>
-
-
-
-
 <h2>MRPA</h2>
-
 <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-  <div style="flex: 1;">
-    <label for="dataInicioMRPA">Início:</label>
-    <input type="date" id="dataInicioMRPA">
-  </div>
-  <div style="flex: 1;">
-    <label for="dataFimMRPA">Fim:</label>
-    <input type="date" id="dataFimMRPA">
-  </div>
+<div style="flex: 1;">
+<label for="dataInicioMRPA">Início:</label>
+<input id="dataInicioMRPA" type="date"/>
 </div>
-
+<div style="flex: 1;">
+<label for="dataFimMRPA">Fim:</label>
+<input id="dataFimMRPA" type="date"/>
+</div>
+</div>
 <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-  <div style="flex: 1;">
-    <label for="afericoesMRPA">Aferições:</label>
-    <input type="number" id="afericoesMRPA" min="0">
-  </div>
-  <div style="flex: 1;">
-    <label for="alteradasMRPA">Alteradas:</label>
-    <input type="number" id="alteradasMRPA" min="0">
-  </div>
+<div style="flex: 1;">
+<label for="afericoesMRPA">Aferições:</label>
+<input id="afericoesMRPA" min="0" type="number"/>
 </div>
-
+<div style="flex: 1;">
+<label for="alteradasMRPA">Alteradas:</label>
+<input id="alteradasMRPA" min="0" type="number"/>
+</div>
+</div>
 <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-  <div style="flex: 1;">
-    <label for="maxPAS">Máx. PAS:</label>
-    <input type="number" id="maxPAS" min="0">
-  </div>
-  <div style="flex: 1;">
-    <label for="maxPAD">Máx. PAD:</label>
-    <input type="number" id="maxPAD" min="0">
-  </div>
+<div style="flex: 1;">
+<label for="maxPAS">Máx. PAS:</label>
+<input id="maxPAS" min="0" type="number"/>
 </div>
-
+<div style="flex: 1;">
+<label for="maxPAD">Máx. PAD:</label>
+<input id="maxPAD" min="0" type="number"/>
+</div>
+</div>
 <button onclick="gerarResumoMRPA()" style="margin-top: 1rem;">Gerar Resumo MRPA</button>
 <div class="resultado" id="resumoMRPA" style="margin-top: 1.5rem;"></div>
-
 <script>
   function gerarResumoMRPA() {
     const inicio = document.getElementById('dataInicioMRPA').value;
@@ -362,16 +319,7 @@
 </script>
 
 
-<h2>Percentil por PFE</h2>
 
-<label for="semanasPFE">IG (sem.):</label>
-<input type="number" id="semanasPFE" min="20" max="41" step="1">
-
-<label for="pesoPFE">PFE (g):</label>
-<input type="number" id="pesoPFE" min="0">
-
-<button onclick="calcularPercentil()">Calcular Percentil</button>
-<div class="resultado" id="resultadoPFE"></div>
 
 
 
@@ -382,39 +330,6 @@
     const [ano, mes, dia] = dataStr.split('-');
     return `${dia}/${mes}/${ano}`;
   }
-</script>
-
-
-<script>
-function calcularPercentil() {
-  const semanas = parseInt(document.getElementById('semanasPFE').value);
-  const peso = parseInt(document.getElementById('pesoPFE').value);
-  const resultado = document.getElementById('resultadoPFE');
-
-  if (isNaN(semanas) || isNaN(peso) || semanas < 20 || semanas > 41) {
-    resultado.innerText = 'Preencha valores válidos entre 20 e 41 semanas';
-    return;
-  }
-
-  const hadlock = {
-    20: [260, 370], 21: [310, 430], 22: [360, 500], 23: [420, 580],
-    24: [500, 680], 25: [580, 790], 26: [670, 910], 27: [770, 1050],
-    28: [880, 1200], 29: [1000, 1350], 30: [1140, 1500], 31: [1280, 1650],
-    32: [1430, 1800], 33: [1580, 2000], 34: [1740, 2200], 35: [1900, 2400],
-    36: [2100, 2650], 37: [2300, 2900], 38: [2500, 3150], 39: [2700, 3400],
-    40: [2850, 3600], 41: [2950, 3700]
-  };
-
-  const [p10, p90] = hadlock[semanas];
-  const percentilEstimado = 10 + ((peso - p10) / (p90 - p10)) * 80;
-  const percentilFormatado = percentilEstimado.toFixed(0);
-
-  resultado.innerHTML = `
-    p(AIG) para ${semanas} semanas:<br>
-    P10 ≈ ${p10}g — P90 ≈ ${p90}g<br><br>
-    <strong>p ≈ ${percentilFormatado}</strong>
-  `;
-}
 </script>
 
 </body>
